@@ -1,36 +1,47 @@
 import './App.css';
+import { useState } from 'react';
 
 function App() {
-  const planets=[
-    {name: "Mars", isGasPlanet: false},
-    {name: "Jupiter", isGasPlanet: true},
-    {name: "Earth" , isGasPlanet: false}
-  ];
+  const [age,setAge] = useState(0);
+  const [iText, setiText] = useState("");
+  const [Buttontext, setButtontext] = useState("Hide");
+
+  const increaseAge = () => {
+    setAge(age+1);
+  }
+  const handleChange = (event) => {
+    setiText(event.target.value);
+  }
+  const handleClick = () => {
+    if(Buttontext === "Hide"){
+      setButtontext("Show");
+    }
+    else{
+      setButtontext("Hide");
+    }
+  }
+
   return (
     <div className="App">
-      Only displaying gas planets wierdly with a function
-        {/* <PrintPlanets name={planets[0].name}/>  */}
-        {planets.map((planet,key) => {
-          if(planet.isGasPlanet){
-            return <PrintPlanets name={planet.name} boo={planet.isGasPlanet}/>
-          }
-          else{
-            return (null);
-          }
-        })}
+      {age}
+      <br></br>
+      <button onClick={increaseAge}>Add one</button>
+      <br></br>
+      <input type="text" onChange={handleChange}></input>
+      <br></br>
+      You are writing: 
+      {iText}
+      <br></br>
+      <br></br>
+      <button onClick={handleClick}>{Buttontext}</button>
+      {Buttontext === "Hide" && <div>This is secret information</div>}
 
-      A sensible way to print it
-      {planets.map( (planet,key) => {
-        return (planet.isGasPlanet && <h1>{planet.name}</h1>)
-      })}
+
+
     </div>
   );
 }
 
-function PrintPlanets(props){
-  return(
-    <h1>{props.name} {props.boo}</h1>
-  );
-}
+
 
 export default App;
