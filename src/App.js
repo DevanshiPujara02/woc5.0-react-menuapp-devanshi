@@ -1,42 +1,30 @@
 import './App.css';
 import { useState } from 'react';
+import items from './Data.js';
+
+// const allCategories = ;
 
 function App() {
-  const [age,setAge] = useState(0);
-  const [iText, setiText] = useState("");
-  const [Buttontext, setButtontext] = useState("Hide");
-
-  const increaseAge = () => {
-    setAge(age+1);
-  }
-  const handleChange = (event) => {
-    setiText(event.target.value);
-  }
-  const handleClick = () => {
-    if(Buttontext === "Hide"){
-      setButtontext("Show");
-    }
-    else{
-      setButtontext("Hide");
-    }
-  }
+  const [activeCategory,setactiveCategory] = useState("All");
+  const categories=["All", ...new Set(items.map((item) => item.category))];
 
   return (
     <div className="App">
-      {age}
-      <br></br>
-      <button onClick={increaseAge}>Add one</button>
-      <br></br>
-      <input type="text" onChange={handleChange}></input>
-      <br></br>
-      You are writing: 
-      {iText}
-      <br></br>
-      <br></br>
-      <button onClick={handleClick}>{Buttontext}</button>
-      {Buttontext === "Hide" && <div>This is secret information</div>}
-
-
+      <div className='header'>
+      <h1>This is Jane's Kitchen</h1>
+      </div>
+      {/* {categories.map((item) => {
+        return <div>{item}</div>
+      })} */}
+      <div className='category_container'>
+        {categories.map((category) => {
+          return(
+            <div>
+              <button>{category}</button>
+            </div>
+          );
+        })}
+      </div>
 
     </div>
   );
