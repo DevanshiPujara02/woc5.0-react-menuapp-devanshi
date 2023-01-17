@@ -47,15 +47,19 @@ function App() {
 
       <div>
         {menuitems.map((item) => {
+          // const {id,name,category,price,img} = item;
           return (
-            <div className='Menuitem'>{item.id} - {item.name}</div>
+            <div className='Menuitem'>
+              <img src={item.img} alt={item.name} className='picture'></img>
+              {item.name}
+            </div>
           );
         })}
       </div>
-
     </div>
   );
 }
+// woc5.0-react-menuapp-devanshi\src\dabeli_img.jpeg
 
 
 
