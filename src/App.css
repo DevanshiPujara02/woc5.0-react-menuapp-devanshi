@@ -45,11 +45,14 @@ html, body{
 h1 {
   font-size: 70px;
   font-weight: 600;
-  background-image: linear-gradient(to left, #553c9a, #b393d3);
+  background-image: linear-gradient(to left, #302159, #b393d3);
+    /* background-image: linear-gradient(to left, #CF4DCE, #F273E6); */
+
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
   margin-top: 0;
+  margin-bottom: 0;
   border : 0;
   padding : 20px;
 }
@@ -57,5 +60,48 @@ h1 {
 .header{
   background-color: #ECECEC;
   margin-top: 0;
+  margin-bottom: 0;
   border:0;
+}
+
+.filter-btn {
+  background: transparent;
+  border-color: transparent;
+  font-size: 1rem;
+  text-transform: capitalize;
+  margin: 0 0.5rem;
+  letter-spacing: 1px;
+  padding: 0.375rem 0.75rem;
+  color:  #54408c;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  border-radius: 0.25rem;
+}
+
+.active {
+  border-bottom: 2px solid;
+}
+
+.filter-btn-active {
+  background: transparent;
+  border-color: transparent;
+  font-size: 1rem;
+  text-transform: capitalize;
+  margin: 0 0.5rem;
+  letter-spacing: 1px;
+  padding: 0.375rem 0.75rem;
+  color:  #54408c;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  border-radius: 0.25rem;
+  border-bottom: 2px solid;
+}
+
+.buttonss{
+  display:inline-block;
+}
+
+.category_container{
+  background-color: #f9ccd6;
+  margin:0;
 }

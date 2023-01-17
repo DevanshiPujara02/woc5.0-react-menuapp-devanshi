@@ -8,19 +8,24 @@ function App() {
   const [activeCategory,setactiveCategory] = useState("All");
   const categories=["All", ...new Set(items.map((item) => item.category))];
 
+  const filteritems = (category)=> {
+    setactiveCategory(category);
+  }
+
   return (
     <div className="App">
       <div className='header'>
       <h1>This is Jane's Kitchen</h1>
       </div>
-      {/* {categories.map((item) => {
-        return <div>{item}</div>
-      })} */}
       <div className='category_container'>
         {categories.map((category) => {
           return(
-            <div>
-              <button>{category}</button>
+            <div className='buttonss'>
+              <button
+              type="button"
+              className={`${activeCategory === category?'filter-btn-active': 'filter-btn'}`}
+              onClick={() => filteritems(category)}>
+              {category}</button>
             </div>
           );
         })}
