@@ -40,6 +40,7 @@
 html, body{
   margin:0;
   border:0;
+  background-color: #ECECEC;
 }
 
 h1 {
@@ -104,4 +105,14 @@ h1 {
 .category_container{
   background-color: #f9ccd6;
   margin:0;
+}
+
+.Menuitem{
+  width: 20%;
+  margin: auto;
+  margin-top: 30px;
+  background-color: white;
+  border : 5px solid;
+  border-color: #f9ccd6;
+  border-radius: 10px;
 }
