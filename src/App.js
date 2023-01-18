@@ -51,7 +51,11 @@ function App() {
           return (
             <div className='Menuitem'>
               <img src={item.img} alt={item.name} className='picture'></img>
-              {item.name}
+              <div className='menutext'>
+                <h2>{item.name}</h2>
+                <h3>Rs. {item.price}</h3>
+                <p>An Indian dish consisting of pieces of vegetable, chicken, etc, dipped in a spiced batter and deep-fried: served with a piquant sauce.</p>
+              </div>
             </div>
           );
         })}
