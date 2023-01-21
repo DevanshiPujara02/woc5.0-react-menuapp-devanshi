@@ -160,7 +160,7 @@ p{
 
 .dropdown{
   /* background-color: #f9ccd6; */
-  margin:20px;
+  margin:30px;
   
   position:relative;
   display:inline-block;
@@ -212,6 +212,12 @@ p{
 
 .filterdiv{
   display: inline-block;
+}
+.filterdiv button{
+  font-size: 14px;
+}
+.sortdiv button{
+  font-size: 14px;
 }
 .sortdiv{
   display: inline-block;

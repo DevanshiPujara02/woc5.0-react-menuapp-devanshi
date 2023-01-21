@@ -13,7 +13,7 @@ function App() {
   const filter1categories=["All", ...new Set(items.map((item) => item.category1))];
   const filter2categories=["All", ...new Set(items.map((item) => item.category2))];
   
-  const sortcategories=["None","Price","Popularity"];
+  const sortcategories=["None","Price (Low to High)","Price (High to Low)","Popularity (Low to High)", "Popularity (High to Low)"];
   
 
   const filteritems = (category1,category2)=> {
@@ -22,15 +22,69 @@ function App() {
 
     var newitems=items;
 
+    // if(category1=="All" &&)
+
     if(category1!=="All"){
       newitems=newitems.filter((item) => item.category1 === category1);
     }
 
-    if(category2!="All"){
+    if(category2!=="All"){
       newitems=newitems.filter((item) => item.category2 === category2);
     }
 
+    console.log(newitems);
+    newitems=[...newitems].sort((a,b) => a.price - b.price);
+    
+
+    if(activesortcategory ==='None'){
+      newitems=[...newitems].sort((a,b) => a.id - b.id);
+    }
+    else if(activesortcategory ==='Price (Low to High)'){
+      newitems=[...newitems].sort((a,b) => a.price - b.price);
+    }
+    else if(activesortcategory ==='Price (High to Low)'){
+      newitems=[...newitems].sort((a,b) => b.price - a.price);
+    }
+    else if(activesortcategory === 'Popularity (Low to High)'){
+      newitems=[...newitems].sort((a,b) => a.orders - b.orders);
+    }
+    else{
+      newitems=[...newitems].sort((a,b) => b.orders - a.orders);
+    }
+
     setmenuitems(newitems);
+    // 
+    // sortitems(activesortcategory);
+  }
+
+  const sortitems = (category) => {
+    // const newitems=menuitems;
+    // console.log(category);
+    setactivesortcategory(category);
+    if(category ==='None'){
+      setmenuitems([...menuitems].sort((a,b) => a.id - b.id));
+    }
+    else if(category ==='Price (Low to High)'){
+      setmenuitems([...menuitems].sort((a,b) => a.price - b.price));
+    }
+    else if(category ==='Price (High to Low)'){
+      setmenuitems([...menuitems].sort((a,b) => b.price - a.price));
+    }
+    else if(category === 'Popularity (Low to High)'){
+      setmenuitems([...menuitems].sort((a,b) => a.orders - b.orders));
+    }
+    else{
+      setmenuitems([...menuitems].sort((a,b) => b.orders - a.orders));
+    }
+    // else if(category === 'Price'){
+    //   if(type === 'asc'){
+    //     setmenuitems([...menuitems].sort((a,b) => a.price - b.price));
+    //   }
+    //   else{
+    //     setmenuitems([...menuitems].sort((a,b) => b.price - a.price));
+    //   }
+    // }
+
   }
 
   //how to loop through key value pairs in an object
@@ -59,7 +113,7 @@ function App() {
             </div>
           );
         })} */}
-        <button className='filter-btn'>Menu</button>
+        <button className='filter-btn-active'>Menu</button>
         <button className='filter-btn'>About</button>
         <button className='filter-btn'>Contact</button>
       </div>
@@ -113,11 +167,16 @@ function App() {
 
         <div className='filterdivhead'>Sort by: </div>
         <div className='sortdiv'>
-          <button className='sort-dropbtn'>Sort</button>
+          <button className='sort-dropbtn'>{activesortcategory}</button>
           <div className='dropdown-content'>
             {sortcategories.map((category) => {
               return(
-                <button>{category}</button>
+                // <div>
+                // {category==="None" && <button onClick={() => sortitems(category,'asc')}>{category}</button>}
+                // {category!=="None" && <button onClick={() => sortitems(category,'asc')}>{category} (Low to High)</button>}
+                // {category!=="None" && <button onClick={() => sortitems(category,'desc')}>{category} (High to Low)</button>}
+                // </div>
+                <button onClick={() => sortitems(category)}>{category}</button>
               )
             })}
           </div>
