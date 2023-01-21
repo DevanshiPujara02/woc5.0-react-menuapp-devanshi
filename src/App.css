@@ -110,7 +110,8 @@ h1 {
 .Menuitem{
   width: 40%;
   margin: auto;
-  margin-top: 30px;
+  /* margin-top: 5px; */
+  margin-bottom: 40px;
   background-color: white;
   border : 5px solid;
   border-color: #f9ccd6;
@@ -155,4 +156,88 @@ p{
   margin:2px 10px 10px 10px;
   font-family: 'Times New Roman', Times, serif;
   color: #54408c
+}
+
+.dropdown{
+  /* background-color: #f9ccd6; */
+  margin:20px;
+  
+  position:relative;
+  display:inline-block;
+}
+
+
+.filter-dropbtn,.sort-dropbtn{
+  background: transparent;
+  border-color: #f9ccd6;
+  font-size: 1rem;
+  text-transform: capitalize;
+  margin: 0 0.5rem;
+  letter-spacing: 1px;
+  padding: 0.375rem 0.75rem;
+  color:  #54408c;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  border-radius: 0.25rem;
+
+  /* cursor: pointer; */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f8f8f8;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 0.25rem;
+}
+
+.dropdown-content button {
+  width: 100%;
+  background-color: #f8f8f8;
+  border:none;
+  color: #54408c;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+/* .dropdown-content button:hover {background-color: #ececec} */
+
+.filterdiv button:hover{background-color: #f9ccd6;}
+.sortdiv button:hover{background-color: #f9ccd6;}
+
+.filterdiv{
+  display: inline-block;
+}
+.sortdiv{
+  display: inline-block;
+}
+
+.filterdiv:hover .dropdown-content {
+  display: block;
+}
+
+.sortdiv:hover .dropdown-content{
+  display: block;
+}
+
+.filterdivhead{
+  background: transparent;
+  border-color: #f9ccd6;
+  font-size: 1rem;
+  text-transform: capitalize;
+  /* margin: 0 0.5rem; */
+  letter-spacing: 1px;
+  padding: 0.375rem 0.75rem;
+  color:  #54408c;
+  display:inline-block;
+}
+
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
 }
