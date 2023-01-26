@@ -5,9 +5,6 @@ import { Details } from './pages/Details';
 import { Header } from './components/Header';
 import { Menu } from './pages/Menu';
 
-
-// const allCategories = ;
-
 function App() {
 
   //how to loop through key value pairs in an object
@@ -32,8 +29,4 @@ function App() {
     </div>
   );
 }
-// woc5.0-react-menuapp-devanshi\src\dabeli_img.jpeg
-
-
-
 export default App;

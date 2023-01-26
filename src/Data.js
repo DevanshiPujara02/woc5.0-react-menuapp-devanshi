@@ -6,7 +6,6 @@ const menu = [
         category2: 'Non-Veg',
         price: 40,
         orders: 1,
-        // img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSESrQ7tequGJ_UtaOyoNMUNnqQNDWrDwpOtwcr_8Fm6g&s'
         img :'https://img.freepik.com/premium-photo/indian-traditional-paneer-pakora-snacks-white-background_55610-3883.jpg?w=2000'
     },
     {
