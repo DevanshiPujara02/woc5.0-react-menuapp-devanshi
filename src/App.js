@@ -4,6 +4,8 @@ import { Extrapage } from './extrapage';
 import { Details } from './pages/Details';
 import { Header } from './components/Header';
 import { Menu } from './pages/Menu';
+import { Login } from './pages/Login';
+import { Signup } from './pages/Signup';
 
 function App() {
 
@@ -24,6 +26,8 @@ function App() {
           <Route  path="/" element={<Menu />}></Route>
           <Route  exact path="/extrapage" element={<Extrapage />}></Route>
           <Route  exact path="/items/:id" element={<Details />}></Route>
+          <Route exact path="/loginpage" element={<Login />}></Route>
+          <Route exact path="/signuppage" element={<Signup />}></Route>
         </Routes>
       </Router>
     </div>
