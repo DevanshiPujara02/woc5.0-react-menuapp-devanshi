@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/woc5.0-react-menuapp-devanshi/static/css/main.17c2ec64.css",
+    "main.css": "/woc5.0-react-menuapp-devanshi/static/css/main.8b8dc111.css",
     "main.js": "/woc5.0-react-menuapp-devanshi/static/js/main.7de6f735.js",
     "index.html": "/woc5.0-react-menuapp-devanshi/index.html",
-    "main.17c2ec64.css.map": "/woc5.0-react-menuapp-devanshi/static/css/main.17c2ec64.css.map",
+    "main.8b8dc111.css.map": "/woc5.0-react-menuapp-devanshi/static/css/main.8b8dc111.css.map",
     "main.7de6f735.js.map": "/woc5.0-react-menuapp-devanshi/static/js/main.7de6f735.js.map"
   },
   "entrypoints": [
-    "static/css/main.17c2ec64.css",
+    "static/css/main.8b8dc111.css",
     "static/js/main.7de6f735.js"
   ]
 }
