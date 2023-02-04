@@ -97,8 +97,8 @@ h1 {
   color:  #54408c;
   cursor: pointer;
   transition: all 0.15s linear;
-  border-radius: 0.25rem;
-  border-bottom: 10px solid;
+  /* border-radius: 0.25rem; */
+  border-bottom:3px solid;
   text-decoration: none;
 }
 
@@ -120,7 +120,7 @@ h1 {
   background-color: white;
   border : 5px solid;
   border-color: #f9ccd6;
-  border-radius: 10px;
+  border-radius: 3px;
   display: flex;
   justify-content: left;
 }
