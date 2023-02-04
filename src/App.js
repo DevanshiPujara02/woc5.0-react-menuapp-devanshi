@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
+      <Router basename='woc5.0-react-menuapp-devanshi/'>
         <Header />
         <Routes>
           <Route  path="/" element={<Menu />}></Route>
