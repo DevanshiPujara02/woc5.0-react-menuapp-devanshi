@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="App">
-      <Router basename='woc5.0-react-menuapp-devanshi/'>
+      <Router basename={process.env.PUBLIC_URL}>
         <Header />
         <Routes>
           <Route  path="/" element={<Menu />}></Route>
