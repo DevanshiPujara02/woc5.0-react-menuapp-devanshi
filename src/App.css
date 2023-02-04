@@ -98,7 +98,7 @@ h1 {
   cursor: pointer;
   transition: all 0.15s linear;
   border-radius: 0.25rem;
-  border-bottom: 2px solid;
+  border-bottom: 10px solid;
   text-decoration: none;
 }
 
