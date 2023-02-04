@@ -1,13 +1,15 @@
 import { useState } from "react";
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import { auth } from "../firebase-config";
 import {onAuthStateChanged, signOut} from "firebase/auth"
+import '../App.css';
 
 
 export const Header = () => {
 
 
   const [user,setUser] = useState({});
+  const [pg,setPg] = useState(0);
 
   const logout = async () => {
     await signOut(auth);
@@ -19,16 +21,25 @@ export const Header = () => {
     }
 
   };
+  
 
   onAuthStateChanged(auth, (currentUser) => {
     setUser(currentUser);
   })
 
 
+
     return (
         <div>
         <div className='header'>
-        <h1>This is Jane's Kitchen</h1>
+          <h1>This is Jane's Kitchen</h1>
+          <div>
+          {user===null && <div className='loginbtn-upp'>Not Logged in</div>}
+          {/* {user===null && <div className='loginbtn-div'><Link to={"/loginpage"} className='loginbtn'>Login</Link></div>} */}
+          {user===null && <Link to={'/loginpage'}><button const path = '/loginpage' className='loginbtn2'>Login</button></Link>}
+          {user!==null && <div className='loginbtn-upp'>Logged in as: {user?.email}</div>}
+          {user!==null && <button onClick={logout} className='loginbtn2'>Log out</button>}
+          </div>
         </div>
         <div className='category_container'>
           {/* {filtercategories.map((category) => {
@@ -42,16 +53,14 @@ export const Header = () => {
               </div>
             );
           })} */}
-          <button className='filter-btn-active'>Menu</button>
-          <button className='filter-btn'>About</button>
-          <button className='filter-btn'>Contact</button>
+
+          <NavLink to="/" className={({ isActive }) => (isActive ? 'filter-btn-active' : 'filter-btn')}>Menu</NavLink>
+          <NavLink to="/contact" className={({ isActive }) => (isActive ? 'filter-btn-active' : 'filter-btn')}>Contact us</NavLink>
+          
           
           <br />
           
-          {user===null && <div>Not Logged in</div>}
-          {user===null && <Link to={"/loginpage"}>Login</Link>}
-          {user!==null && <div>Logged in as: {user?.email}</div>}
-          {user!==null && <button onClick={logout}>Log out</button>}
+
         </div>
         </div>
     )

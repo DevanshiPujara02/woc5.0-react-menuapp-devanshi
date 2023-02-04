@@ -122,8 +122,7 @@ export const Menu = () => {
                             <h2>{item.name}</h2>
                             <h3>Rs. {item.price}</h3>
                             <p>An Indian dish consisting of pieces of vegetable, chicken, etc, dipped in a spiced batter and deep-fried: served with a piquant sauce.</p>
-                            <Link to={'/extrapage'}>Link</Link>
-                            <Link to={`/items/${item.id}`}>Link</Link>
+                            <Link to={`/items/${item.id}`}><button className='loginbtn2'>Details</button><br /><br /></Link>
                         </div>
                     </div>
                 );

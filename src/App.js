@@ -6,6 +6,7 @@ import { Header } from './components/Header';
 import { Menu } from './pages/Menu';
 import { Login } from './pages/Login';
 import { Signup } from './pages/Signup';
+import { Contact } from './pages/Contact';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
           <Route  exact path="/items/:id" element={<Details />}></Route>
           <Route exact path="/loginpage" element={<Login />}></Route>
           <Route exact path="/signuppage" element={<Signup />}></Route>
+          <Route exact path="/contact" element={<Contact />}></Route>
         </Routes>
       </Router>
     </div>

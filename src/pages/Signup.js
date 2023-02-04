@@ -22,11 +22,17 @@ export const Signup = () => {
     };
     // return <h1>HEY</h1>
     return (
-        <div>
-            <h4>Sign up</h4>
+        <div className="outline">
+            <h4>SIGN UP</h4>
             <input placeholder="Email" onChange={(event) => {setEmail(event.target.value)}}/>
+            <br />
             <input placeholder="Password" type='password' onChange={(event) => {setPassword(event.target.value)}}/>
-            <button onClick={register}> Sign up </button>
+            <br />
+            <br />
+            <button onClick={register} className='loginbtn2'> Sign up </button>
+            <br />
+            <br />
+            <br />
         </div>
     )
     // return (

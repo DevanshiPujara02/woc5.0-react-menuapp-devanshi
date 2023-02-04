@@ -6,14 +6,14 @@ export const Details = () => {
     let {id} = useParams();
     console.log(id);
     const item = items.find((item) => item.id === Number(id));
-    console.log(item);
+    // console.log(item);
      return (
-        <div>
-            This is the details page.
-            Item id: {item.id}
-            Item name: {item.name}
-            Item video: 
-            <YoutubeEmbed embedId='3PVjWpyhEzQ' />
+        <div className='outline'>
+            <h5>Item id: {item.id}</h5>
+            
+            <h1>{item.name}</h1>
+
+            <YoutubeEmbed embedId={item.yt} />
         </div>
     )
 }
